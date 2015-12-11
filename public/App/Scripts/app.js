@@ -9,16 +9,18 @@ angular.module("todoApp", ["ngRoute", "AdalAngular"])
                 controller: "homeCtrl",
                 templateUrl: "~/../App/Views/Home.html",
                 requireADLogin: true,
-            }).when("/Settings", {
-                controller: "settingsCtrl",
-                templateUrl: "~/../App/Views/Settings.html",
-            }).otherwise({ redirectTo: "/Settings" });
+            }).otherwise({ redirectTo: "/settings.html" });
 
             var tenant = localStorage.getItem('tenant');
             var clientId = localStorage.getItem('clientId');
 
             if (!tenant || !clientId){
-              return;
+              var issues = [];
+
+              if(!tenant) issues.push('tenant');
+              if(!clientId) issues.push('clientId');
+
+              window.location.href = "/settings.html?issues=" + issues.join();
             }
 
             var conf = {

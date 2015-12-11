@@ -55,7 +55,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="btn btn-link" ng-show="userInfo.isAuthenticated" ng-click="logout()"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
+        <li>
+          <a class="btn btn-link" href="/settings.html">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+          </a>
+        </li>
         <li><a class="btn btn-link" ng-show="userInfo.isAuthenticated" ng-click="logout()">Logout</a></li>
         <li><a class="btn btn-link" ng-hide="userInfo.isAuthenticated" ng-click="login()">Login</a></li>
       </ul>
