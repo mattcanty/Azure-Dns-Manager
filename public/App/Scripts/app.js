@@ -14,10 +14,17 @@ angular.module("todoApp", ["ngRoute", "AdalAngular"])
                 templateUrl: "~/../App/Views/Settings.html",
             }).otherwise({ redirectTo: "/Settings" });
 
+            var tenant = localStorage.getItem('tenant');
+            var clientId = localStorage.getItem('clientId');
+
+            if (!tenant || !clientId){
+              return;
+            }
+
             var conf = {
                 instance: "https://login.microsoftonline.com/",
-                tenant: localStorage.getItem('tenant'),
-                clientId: localStorage.getItem('clientId'),
+                tenant: tenant,
+                clientId: clientId,
                 extraQueryParameter: "nux=1",
                 loginResource: "https://management.azure.com/"
             };

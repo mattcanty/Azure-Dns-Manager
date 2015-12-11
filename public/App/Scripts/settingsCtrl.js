@@ -8,6 +8,9 @@ angular.module("todoApp")
         "$http",
         "$filter",
         function ($scope, adalService, $location, $window, $http, $filter) {
+
+            console.debug('settingsCtrl loading')
+
             $scope.login = function() {
                 adalService.login();
             };

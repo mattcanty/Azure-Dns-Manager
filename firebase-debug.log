@@ -1,0 +1,8 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\bin\firebase serve
+[debug] Platform:     win32
+[debug] Node Version: v5.1.0
+[debug] Time:         Fri Dec 11 2015 21:19:47 GMT+0000 (GMT Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Listening at http://localhost:5000
