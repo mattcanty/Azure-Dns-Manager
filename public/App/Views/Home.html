@@ -94,32 +94,32 @@
                 <div class="input-group">
                   <span class="input-group-addon">HTTP<small>(S)</small>://</span>
                   <input type="text" class="form-control" ng-model="newRecord.name" placeholder="Enter a name...">
-                  <span class="input-group-addon">{{zone.name ? zone.name : "whizzbang.biz" }}</span>
+                  <span class="input-group-addon">.{{zone.name ? zone.name : "whizzbang.biz" }}</span>
                 </div>
                 <div class="btn-group btn-group-justified" role="group">
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default disabled" ng-class="{active: newRecord.type === 'A'}" ng-click="newRecord.type = 'A'">A</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: newRecord.type === 'A'}" ng-click="newRecord.type = 'A'">A</button>
                   </div>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default disabled" ng-class="{active: newRecord.type === 'AAAA'}" ng-click="newRecord.type = 'AAAA'">AAAA</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: newRecord.type === 'AAAA'}" ng-click="newRecord.type = 'AAAA'">AAAA</button>
                   </div>
                   <div class="btn-group" role="group">
                     <button type="button" class="btn btn-default" ng-class="{active: newRecord.type === 'CNAME'}" ng-click="newRecord.type = 'CNAME'">CNAME</button>
                   </div>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default disabled" ng-class="{active: newRecord.type === 'MX'}" ng-click="newRecord.type = 'MX'">MX</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: newRecord.type === 'MX'}" ng-click="newRecord.type = 'MX'">MX</button>
                   </div>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default disabled" ng-class="{active: newRecord.type === 'SOA'}" ng-click="newRecord.type = 'SOA'">SOA</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: newRecord.type === 'SOA'}" ng-click="newRecord.type = 'SOA'">SOA</button>
                   </div>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default disabled" ng-class="{active: newRecord.type === 'NS'}" ng-click="newRecord.type = 'NS'">NS</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: newRecord.type === 'NS'}" ng-click="newRecord.type = 'NS'">NS</button>
                   </div>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default disabled" ng-class="{active: newRecord.type === 'SRV'}" ng-click="newRecord.type = 'SRV'">SRV</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: newRecord.type === 'SRV'}" ng-click="newRecord.type = 'SRV'">SRV</button>
                   </div>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default disabled" ng-class="{active: newRecord.type === 'TXT'}" ng-click="newRecord.type = 'TXT'">TXT</button>
+                    <button type="button" class="btn btn-default" ng-class="{active: newRecord.type === 'TXT'}" ng-click="newRecord.type = 'TXT'">TXT</button>
                   </div>
                 </div>
               </div>
@@ -149,44 +149,44 @@
       <tr ng-repeat="item in recordSets | filter:filter">
         <td>{{item.name}}</td>
         <td>
-          <input type="text" class="form-control" placeholder="text" ng-model="item.properties.TTL"/>
+          <input type="text" class="form-control" ng-model="item.properties.TTL"/>
         <td>
 
           <form class="form-horizontal" ng-show="item.properties.SOARecord">
             <div class="form-group">
               <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.email">
+                <input type="text" class="form-control" ng-model="item.properties.SOARecord.email">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-3 control-label">Host</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.host">
+                <input type="text" class="form-control" ng-model="item.properties.SOARecord.host">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-3 control-label">Expire Time</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.expireTime">
+                <input type="text" class="form-control" ng-model="item.properties.SOARecord.expireTime">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-3 control-label">Minimum TTL</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.minimumTTL">
+                <input type="text" class="form-control" ng-model="item.properties.SOARecord.minimumTTL">
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-3 control-label">Refresh Time</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.refreshTime">
+                <input type="text" class="form-control" ng-model="item.properties.SOARecord.refreshTime">
               </div>
             </div>
             <div class="form-group">
               <label class="col-sm-3 control-label">Retry Time</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.retryTime">
+                <input type="text" class="form-control" ng-model="item.properties.SOARecord.retryTime">
               </div>
             </div>
           </form>
@@ -195,7 +195,7 @@
             <div class="form-group">
               <label class="col-sm-3 control-label">CName</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.CNAMERecord.cname">
+                <input type="text" class="form-control" ng-model="item.properties.CNAMERecord.cname">
               </div>
             </div>
           </form>
@@ -204,7 +204,7 @@
             <div class="form-group" ng-repeat="record in item.properties.NSRecords">
               <label class="col-sm-3 control-label">NSDName</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="record.nsdname">
+                <input type="text" class="form-control" ng-model="record.nsdname">
               </div>
             </div>
           </form>
@@ -213,11 +213,42 @@
             <div class="form-group" ng-repeat="record in item.properties.MXRecords">
               <label class="col-sm-3 control-label">Exchange</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="record.exchange">
+                <input type="text" class="form-control" ng-model="record.exchange">
               </div>
               <label class="col-sm-3 control-label">Preference</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="record.preference">
+                <input type="text" class="form-control" ng-model="record.preference">
+              </div>
+            </div>
+          </form>
+
+          <form class="form-horizontal" ng-show="item.properties.MXRecords">
+            <div class="form-group" ng-repeat="record in item.properties.MXRecords">
+              <label class="col-sm-3 control-label">Exchange</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="record.exchange">
+              </div>
+              <label class="col-sm-3 control-label">Preference</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="record.preference">
+              </div>
+            </div>
+          </form>
+
+          <form class="form-horizontal" ng-show="item.properties.ARecords">
+            <div class="form-group" ng-repeat="record in item.properties.ARecords">
+              <label class="col-sm-3 control-label">IPv4</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="record.ipv4Address">
+              </div>
+            </div>
+          </form>
+
+          <form class="form-horizontal" ng-show="item.properties.AAAARecords">
+            <div class="form-group" ng-repeat="record in item.properties.AAAARecords">
+              <label class="col-sm-3 control-label">IPv6</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="record.ipv6Address">
               </div>
             </div>
           </form>
@@ -226,20 +257,32 @@
             <div class="form-group" ng-repeat="record in item.properties.TXTRecords">
               <label class="col-sm-3 control-label">Value</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="text" ng-model="record.value">
+                <input type="text" class="form-control" ng-model="record.value">
               </div>
             </div>
           </form>
-          <!--
-          <dns-array-record records="item.properties.ARecords" something="'A'" properties="['ipv4Address']"></dns-array-record>
-          <dns-array-record records="item.properties.AAAARecord" something="'AAAA'" properties="['ipv6Address']"></dns-array-record>
-          <dns-object-record record="item.properties.CNAMERecord" something="'CNAME'" properties="['cname']"></dns-object-record>
-          <dns-array-record records="item.properties.MXRecords" something="'MX'" properties="['preference','exchange']"></dns-array-record>
-          <dns-object-record record="item.properties.SOARecord" something="'SOA'" properties="['email','expireTime','host','minimumTTL','refreshTime','retryTime']"></dns-object-record>
-          <dns-array-record records="item.properties.NSRecords" something="'NS'" properties="['nsdname']"></dns-object-record>
-          <dns-array-record records="item.properties.SRVRecords" something="'SRV'" properties="['target']"></dns-array-record>
-          <dns-array-record records="item.properties.TXTRecords" something="'TXT'" properties="['value']"></dns-array-record>
-        -->
+
+          <form class="form-horizontal" ng-show="item.properties.SRVRecords">
+            <div class="form-group" ng-repeat="record in item.properties.SRVRecords">
+              <label class="col-sm-3 control-label">Target</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="record.target">
+              </div>
+              <label class="col-sm-3 control-label">Port</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="record.port">
+              </div>
+              <label class="col-sm-3 control-label">Priority</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="record.priority">
+              </div>
+              <label class="col-sm-3 control-label">Weight</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="record.weight">
+              </div>
+            </div>
+          </form>
+
         </td>
         <td>
           <button class="btn btn-default" ng-click="save(item)">Save</button>
