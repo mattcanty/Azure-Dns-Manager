@@ -5,7 +5,7 @@ angular.module("todoApp", ["ngRoute", "AdalAngular"])
         "$httpProvider",
         "adalAuthenticationServiceProvider",
         function($routeProvider, $httpProvider, adalProvider) {
-            $routeProvider.when("/Home", {
+            $routeProvider.when("/", {
                 controller: "homeCtrl",
                 templateUrl: "~/../App/Views/Home.html",
                 requireADLogin: true,

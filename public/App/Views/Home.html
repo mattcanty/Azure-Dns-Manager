@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav">
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                    {{subscription ? subscription.displayName : "Subscription"}} <span class="badge">{{subscriptions.length}}</span>  <span class="caret"></span>
+                    {{subscription ? subscription.displayName : "Subscription"}} <span class="caret"></span>
                   </a>
           <ul class="dropdown-menu">
             <li ng-repeat="item in subscriptions">
@@ -26,7 +26,7 @@
         </li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                    {{resource ? resource.name : "Resource"}} <span class="badge">{{resources.length}}</span> <span class="caret"></span>
+                    {{resource ? resource.name : "Resource"}} <span class="caret"></span>
                   </a>
           <ul class="dropdown-menu">
             <li ng-repeat="item in resources">
@@ -38,7 +38,7 @@
         </li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                    {{zone ? zone.name : "Zone"}} <span class="badge">{{zones.length}}</span> <span class="caret"></span>
+                    {{zone ? zone.name : "Zone"}} <span class="caret"></span>
                   </a>
           <ul class="dropdown-menu">
             <li ng-repeat="item in zones">
@@ -133,9 +133,8 @@
 </div>
 <br />
 <div class="row">
-  <div class="col-xs-12 col-md-12">
+  <div class="col-md-12">
     <div class="form-group has-feedback">
-        <label class="control-label">Filter</label>
         <input type="text" class="form-control input-lg" ng-model="filter" placeholder="Search for something" />
     </div>
   </div>
