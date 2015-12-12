@@ -54,6 +54,11 @@
           </a>
         </li>
       </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+      </form>
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a class="btn btn-link" href="/settings.html">
@@ -132,32 +137,99 @@
     </div>
 </div>
 <br />
-<div class="row">
-  <div class="col-md-12">
-    <div class="form-group has-feedback">
-        <input type="text" class="form-control input-lg" ng-model="filter" placeholder="Search for something" />
-    </div>
-  </div>
-</div>
-<br />
 <div class="table-responsive">
   <table class="table">
     <thead>
       <th>Name</th>
       <th>TTL</th>
-      <th>Records</th>
+      <th></th>
       <th></th>
     </thead>
     <tbody>
       <tr ng-repeat="item in recordSets | filter:filter">
         <td>{{item.name}}</td>
         <td>
-          {{item.properties.TTL}}
+          <input type="text" class="form-control" placeholder="text" ng-model="item.properties.TTL"/>
         <td>
-          <div class="input-group" ng-show="item.properties.CNAMERecord">
-            <span class="input-group-addon" id="sizing-addon2">CNAME</span>
-            <input type="text" class="form-control" ng-model="item.properties.CNAMERecord.cname">
-          </div>
+
+          <form class="form-horizontal" ng-show="item.properties.SOARecord">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">Host</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.host">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">Expire Time</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.expireTime">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">Minimum TTL</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.minimumTTL">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">Refresh Time</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.refreshTime">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">Retry Time</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.SOARecord.retryTime">
+              </div>
+            </div>
+          </form>
+
+          <form class="form-horizontal" ng-show="item.properties.CNAMERecord">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">CName</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="item.properties.CNAMERecord.cname">
+              </div>
+            </div>
+          </form>
+
+          <form class="form-horizontal" ng-show="item.properties.NSRecords">
+            <div class="form-group" ng-repeat="record in item.properties.NSRecords">
+              <label class="col-sm-3 control-label">NSDName</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="record.nsdname">
+              </div>
+            </div>
+          </form>
+
+          <form class="form-horizontal" ng-show="item.properties.MXRecords">
+            <div class="form-group" ng-repeat="record in item.properties.MXRecords">
+              <label class="col-sm-3 control-label">Exchange</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="record.exchange">
+              </div>
+              <label class="col-sm-3 control-label">Preference</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="record.preference">
+              </div>
+            </div>
+          </form>
+
+          <form class="form-horizontal" ng-show="item.properties.TXTRecords">
+            <div class="form-group" ng-repeat="record in item.properties.TXTRecords">
+              <label class="col-sm-3 control-label">Value</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="text" ng-model="record.value">
+              </div>
+            </div>
+          </form>
           <!--
           <dns-array-record records="item.properties.ARecords" something="'A'" properties="['ipv4Address']"></dns-array-record>
           <dns-array-record records="item.properties.AAAARecord" something="'AAAA'" properties="['ipv6Address']"></dns-array-record>
