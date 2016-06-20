@@ -1,3 +1,5 @@
+_**Azure now provides a suitable web interface for managing your DNS records.** I highly recommend using it over this! However I will keep the project alive as it contains a potentially useful Azure authentication example. Thanks._
+
 # Azure DNS Manager
 _Please note this project is still in its very early stages. Eager to collaborate!_
 
